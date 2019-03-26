@@ -1,16 +1,11 @@
 # Creando una Red Social
 
-## Preámbulo
+## Historia de Usuaria
 
-Instagram, Snapchat, Twitter, Facebook, Twitch, Linkedin, etc. Las redes
-sociales han invadido nuestras vidas. Las amamos y/u odiamos, y muchos no podemos vivir sin ellas.
+Diana es una chica de 25 años a la que le gusta viajar sola o con su grupo de amigas. En su último viaje tuvo una mala experiencia en el hospedaje ya que por un portal de internet rento una cabaña costosa y al llegar a la dirección que le proporcionaron no existía dicha cabaña y decidió que a partir de entonces planificará con más cuidado sus próximos viajes.
+Dentro de seis meses volverá a viajar y ahora en la planeación de su viaje se ha encontrado con mucha información, demasiado dispersa y además no se siente segura al apartar su hospedaje, y también tiene la incertidumbre de que transporte le sería más accesible en cuestiones de precios.
+A Diana le gustaría contar con una aplicación donde pudiera encontrar información más precisa y tener acceso a experiencias de otras viajeras que le ayuden en la planificación, le den tips, y sobre todo acceso a contactos seguros de transporte y hospedaje.
 
-Hay redes sociales de todo tipo y para todo tipo de intereses. Por ejemplo,
-en una ronda de financiamiento con inversionistas, se presentó una red social
-para químicos en la que los usuarios podían publicar artículos sobre sus
-investigaciones, comentar en los artículos de sus colegas, y filtrar artículos
-de acuerdo a determinadas etiquetas o su popularidad, lo más reciente, o lo
-más comentado.
 
 ## Introducción
 

@@ -1,0 +1,105 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Soy Viajera</title>
+    <script src="https://www.gstatic.com/firebasejs/5.9.0/firebase.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="nav-wrapper container">
+      <a href="#" class="brand-logo">
+          <img src="img/logofin3.png" id="logo" style="width: 40rem;">
+      </a>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Home <!--<span class="sr-only">(current)</span>--></a>
+      </li>
+      <li class="logged-in">
+        <a class="nav-link" href="#" id="logout">Cerrar Sesión</a>
+      </li>
+      <li class="logged-out">
+        <a class="nav-link " href="#" data-toggle="modal" data-target="#modal-login" >Iniciar Sesión</a>
+      </li>
+      <li class="logged-out">
+        <a class="nav-link " href="#" data-toggle="modal" data-target="#modal-signup" >Regístrate</a>
+      </li>
+    </ul>
+  </div>
+</div>
+</nav>
+
+<!-- SIGN UP Modal -->
+<div class="modal fade" id="modal-signup" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">  
+          <h5 class="modal-title" id="exampleModalLabel">Regístrate</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <form id="signup-form">
+                <div class="input-field">
+                  <input type="email" id="signup-email" placeholder="Dirección de Correo" class="form-control mt-2" required />
+                </div>
+                <div class="input-field">
+                  <input type="password" id="signup-password" placeholder="Elige tú contraseña" class="form-control mt-2" required />
+                </div>
+                <button class="btn yellow darken-2 z-depth-0">Sign up</button>
+              </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- LOGIN Modal -->
+<div class="modal fade" id="modal-login" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">  
+        <h5 class="modal-title" id="exampleModalLabel">Iniciar Sesión</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form id="login-form">
+          <div class="input-field">
+            <input type="email" id="login-email" placeholder="Dirección de Correo" class="form-control mt-2" required />
+          </div>
+          <div class="input-field">
+            <input type="password" id="login-password" placeholder="Escribe tú contraseña" class="form-control mt-2" required />
+          </div>
+          <button class="btn yellow darken-2 z-depth-0">Login</button>
+        </form> 
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  <script>
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyBunyhFeWp_BWmChQYLp5WGseFGIp58H5c",
+      authDomain: "mujeres-viajeras-14643.firebaseapp.com",
+      databaseURL: "https://mujeres-viajeras-14643.firebaseio.com",
+      projectId: "mujeres-viajeras-14643",
+      storageBucket: "mujeres-viajeras-14643.appspot.com",
+      messagingSenderId: "687765489747"
+    };
+    firebase.initializeApp(config);
+  </script>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  
+</body>

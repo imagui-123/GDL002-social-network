@@ -1,0 +1,68 @@
+body{
+  font-family: 'Caudex', serif;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+#logo{
+
+  align-content: center;
+}
+#slogan{
+width: 32.7rem;
+margin-left: auto;
+margin-right: auto;
+}
+
+/*centrar input text del slogan*/
+.close{
+  margin-left: auto;
+  margin-right: auto;
+}
+/*cambiar color input text del slogan*/
+form .form-control::-moz-placeholder {
+  color: black;
+  opacity: 1;
+}
+form .form-control:-ms-input-placeholder {
+  color: black;
+ }
+form .form-control::-webkit-input-placeholder {
+  color: black;
+}
+
+#principal-btn{
+text-align: center;
+}
+
+
+.fa-1x {
+font-size: 1.5rem;
+}
+.navbar-toggler.toggler-example {
+cursor: pointer;
+}
+
+.dark-pink-text {
+color: #AC003A;
+}
+
+.btncolor{
+background-color: #e95c6f;
+border: #b64857;
+}
+
+.main-color{
+background-color: #e95c6f;
+color: white;
+
+}
+
+.bk-color{
+background-color: #eaeaea;
+}
+
+ 
+
+ 
+
+  
