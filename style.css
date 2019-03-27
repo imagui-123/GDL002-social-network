@@ -61,8 +61,14 @@ color: white;
 background-color: #eaeaea;
 }
 
- 
+#homeScreen{
+  display: none;
+}
 
- 
+.slider{
+  margin-top: 5rem;
+  width: 10rem;
+  height: 3rem;
+}
 
   
