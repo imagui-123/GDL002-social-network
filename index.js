@@ -1,4 +1,4 @@
-const home = document.getElementById("home");
+// const home = document.getElementById("home");
 
 const app = {
     pages: [],
@@ -17,13 +17,14 @@ const app = {
     },
     nav: function(ev){
         ev.preventDefault();
-        home.style.display="block";
+        // home.style.display="block";
         let currentPage = ev.target.getAttribute('data-target');
         document.querySelector('.active').classList.remove('active');
         document.getElementById(currentPage).classList.add('active');
         console.log(currentPage)
         history.pushState({}, currentPage, `#${currentPage}`);
         document.getElementById(currentPage).dispatchEvent(app.show);
+        Home(firebaseUser);
     },
     pageShown: function(ev){
         console.log('Page', ev.target.id, 'just shown');
@@ -44,6 +45,119 @@ const app = {
     }
   }
   document.addEventListener('DOMContentLoaded', app.init);
+
+   //FUNCIONES PARA PUBLICAR EN MURO PRINCIPAL
+// Agregar documentos
+function save(){
+    let firstName =document.getElementById("nombre").value;
+    //const lastName =document.getElementById("apellido").value;
+    //const date =document.getElementById("fecha").value;
+    if(firstName == "" ) {
+      alert("Necesitas crear el post")
+      firstName.value="";
+    }
+    else {
+      db.collection("users").add({
+        first: firstName,
+        //last: lastName,
+        //born: date,
+    })
+    .then(function(docRef) {
+        console.log("Document written with ID: ", docRef.id);
+        document.getElementById("nombre").value = "";
+        //document.getElementById("apellido").value = "";
+        //document.getElementById("fecha").value = "";
+    })
+    .catch(function(error) {
+        console.error("Error adding document: ", error);
+    });
+    
+  }
+  }
+     // Leer Documentos
+    const tableData = document.getElementById("table-data");
+     db.collection("users").onSnapshot((querySnapshot) => {
+       tableData.innerHTML ="";
+      querySnapshot.forEach((doc) => {
+          console.log(`${doc.id} => ${doc.data().first}`);
+          tableData.innerHTML += `
+          <tr>
+              <th scope="row">${doc.id}</th>
+              <td>${doc.data().first}</td>`+
+              //<td>${doc.data().last}</td>
+               //<td>${doc.data().born}</td>
+               `<td><button class= "btn btn-danger" onclick ="deletePost('${doc.id}' )" >Eliminar</button></td>
+              <td><button class= "btn btn-warning" onclick ="editionPost('${doc.id}', '${doc.data().first}')" >Editar</button></td>
+            </tr>`
+      });
+    });
+    
+    //borrar datos
+    function deletePost (id){
+      if(!confirm("Realmente desea eliminar?")==true){
+        event.preventDefault();
+        return false;
+      }
+        db.collection("users").doc(id).delete().then(function() {
+        console.log("Document successfully deleted!");
+        
+      })
+      .catch(function(error) {
+        console.error("Error removing document: ", error);
+      });
+    }
+    
+    
+    //editar documentos 
+    
+    
+    function editionPost (id, nombre){
+    
+      document.getElementById('nombre').value = nombre;
+     // document.getElementById('apellido').value = apellido;
+      //document.getElementById('fecha').value = fecha;
+      
+      var editButton = document.getElementById('boton');
+      editButton.innerHTML = 'Editar';
+    
+    // boton.addEventListener("click",)
+      boton.onclick = function (){
+      var washingtonRef = db.collection("users").doc(id);
+    
+      var nombre =   document.getElementById('nombre').value;
+      nombre.innerHTML="";
+      //var apellido =   document.getElementById('apellido').value;
+      //var fecha =   document.getElementById('fecha').value;
+    
+    
+      // Set the "capital" field of the city 'DC'
+      return washingtonRef.update({
+        first: nombre,
+        //last: apellido,
+        //born: fecha,
+      })
+      .then(function() {
+          console.log("Document successfully updated!");
+          boton.innerHTML = "Guardar";
+        })
+    
+      .catch(function(error) {
+          // The document probably doesn't exist.
+          console.error("Error updating document: ", error);
+      });
+      
+      }
+      
+    }
+
+
+  function Home(firebaseUser) {
+      location.hash = "#home";
+   }
+   
+   function Perfil() {
+      location.hash = "#perfil";
+   }
    
  // DOM elements
 // const guideList = document.querySelector('.guides');

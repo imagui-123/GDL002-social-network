@@ -107,13 +107,13 @@ p {
   display: block; 
 }
 #home{
-  background-color: hsl(60, 50%, 80%);
+  background-color: #F57D55;
 }
 #perfil{
-  background-color: hsl(180, 50%, 80%);
+  background-color: #D25748;
 }
 #transporte{
-  background-color: hsl(240, 50%, 80%);
+  background-color: #D248A0;
 }
 h1{
   font-size: 2rem;
@@ -124,4 +124,9 @@ h1{
   font-size: 5rem;
   font-weight: 900;
 }
-  
+
+textarea{
+  resize: none;
+  max-width: 40rem;
+  word-wrap: break-word;
+}

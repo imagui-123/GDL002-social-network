@@ -67,7 +67,7 @@
     </section>  <!-- fin div bienvenida -->
 
       <!-- SIGN UP Modal -->
-  <section >
+  <section id="welcome">
       <div id="modal-signup" class="modal" tabindex="-1" role="dialog" aria-hidden="true" data-backdrop="static"
       data-keyboard="false">
         <div class="modal-dialog" role="document">
@@ -81,14 +81,24 @@
             </div>
             <div class="modal-body  bk-color">
               <form class="signup-form">
+                  <!-- <div class="input-field">
+                      <input type="text" id="nombre" placeholder="Escribe tú nombre" class="form-control mt-2"
+                        required autocomplete="off" />
+                    </div>
+                    <div class="input-field">
+                        <input type="text" id="apellido" placeholder="Escribe tú apellido" class="form-control mt-2"
+                          required autocomplete="off" />
+                      </div> -->
                 <div class="input-field">
                   <input type="email" id="signup-email" placeholder="Dirección de Correo" class="form-control mt-2"
-                    required />
+                    required autocomplete="off" />
                 </div>
                 <div class="input-field">
                   <input type="password" id="signup-password" placeholder="Elige tú contraseña" class="form-control mt-2"
                     required />
+                    <small id="emailHelp" class="form-text text-muted">La contraseña debe tener mínimo 6 caractéres</small>
                 </div>
+                
                 <button class="btn yellow darken-2 z-depth-0 mt-2" id="registerUser">Aceptar</button>
               </form>
             </div>
@@ -114,7 +124,7 @@
               <form class="login-form">
                 <div class="input-field">
                   <input type="email" id="login-email" placeholder="Dirección de Correo" class="form-control mt-2"
-                    required />
+                    required  />
                 </div>
                 <div class="input-field">
                   <input type="password" id="login-password" placeholder="Escribe tú contraseña" class="form-control mt-2"
@@ -127,6 +137,8 @@
         </div>
       </div>
     </section>
+
+
     
   <main> 
     <div class="nav" id="navInicio">
@@ -155,10 +167,37 @@
                 </div>
             </nav>
           </nav>
+          <!-- <button id="closeSesion">cerrar sesion</button> -->
     </div><!-- fin div inicio -->
 
     <div class="page active" id="home">
         <h1>Inicio</h1>
+        <!-- <div id="myWall"> -->
+      <div class=" justify-content-md-center">
+        <div class="col-md-auto">      
+          <textarea class="control"  id="nombre" placeholder="Compartenos alguna experiencia" rows="5"  maxlength="250"></textarea><br/>
+          <button class= "btn btn-info" id= "boton"  onclick="save()">Compartir</button>
+        
+          <table class="table my-3">
+              <thead>
+                <tr>
+                  <th scope="col">Usuario</th>
+                  <th scope="col">Comentario</th>
+                  <th scope="col">Eliminar</th>
+                  <th scope="col">Editar</th>
+                </tr>
+              </thead>
+              <tbody id= "table-data">
+                <tr>
+                  <th scope="row">1</th>
+                  <td>Mark</td>
+                  <td>Otto</td>
+                  <td>@mdo</td>
+                </tr>
+              </tbody>
+            </table>
+        </div>
+      </div>
     </div><!-- fin div inicio -->
 
     <div class="page" id="perfil">
@@ -169,6 +208,7 @@
         <h1>Transporte</h1>
     </div><!-- fin div transporte -->
   </main>
+  
 </body>
 
 
@@ -188,7 +228,8 @@
  
 <!-- <script src="main.js"></script>
     <script src="data.js"></script> -->
-    <script src="auth.js" async="async"></script>
+    <script src="auth.js" ></script>
+    <!-- async="async" -->
     <!-- <script src="main.js"></script> -->
 
 <script src="index.js"></script> 

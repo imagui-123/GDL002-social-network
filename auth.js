@@ -1,33 +1,40 @@
 const welcomeScreen = document.getElementById("bienvenida");
 const homeScreen = document.getElementById("navInicio");
+
+const home=document.getElementById("home");
+const carouselScreen= document.getElementById("carouselExampleSlidesOnly");
+home.style.display="none";
+
 // signup
 const signupForm = document.querySelector(".signup-form");
 // login
 const loginForm = document.querySelector(".login-form");
-// obtener el usuario que accedio
+// // obtener el usuario que accedio
 let user = auth.currentUser;
 
 //listen for auth status changes
 function status() {
   auth.onAuthStateChanged(user => {
     if (user) {
+      console.log(user);
+      // console.log(user.emailVerified);
+    //  let uid=user.uid;
+    //  saveData(uid);
       //console.log('user logged in', user);
       welcomeScreen.style.display ="none";
       homeScreen.style.display ="block";
-      
-      // document.addEventListener('click', app());
-      // reloadS();
+      home.style.display="block";
+     
     } else {
       //console.log('user logged out');
       welcomeScreen.style.display = "block";
+      homeScreen.style.display ="none";
+      home.style.display="none";
     }
   });
 }
 
-/*function prueba(){
- console.log(auth.currentUser);
- status();
-}*/
+
 
 signupForm.addEventListener("submit", e => {
   e.preventDefault();
@@ -37,21 +44,29 @@ signupForm.addEventListener("submit", e => {
   // sign up the user
   auth.createUserWithEmailAndPassword(email, password).then(cred => {
     // close the signup modal & reset form
+    
     const modal = document.querySelector("#modal-signup");
     sendVerification();
-    alert("verifique su correo");
-    $("#modal-login").modal("hide"); 
     signupForm.reset();
-
-  });
+    $("#modal-signup").modal("hide"); 
+   
+  })
+  .catch(function(error){
+    let errorMessage=error.message;
+    let errors=errorMessages (errorMessage);
+    alert(errors);
+  })
 });
 
-// logout
-// const logout = document.querySelector('#logout');
-// logout.addEventListener('click', (e) => {
-//   e.preventDefault();
-//   auth.signOut();
-// });
+// function saveData(uid){
+//   let user= {
+//     nombre: nombre.value,
+//     apellido: apellido.value,
+//   }
+//   //dentro de la rama usuarios, se guarda el usuario con su uid
+//   firebase.database().ref("/users/" + uid)
+//   .set(user);
+// }
 
 loginForm.addEventListener("submit", e => {
   e.preventDefault();
@@ -60,101 +75,86 @@ loginForm.addEventListener("submit", e => {
   const email = loginForm["login-email"].value;
   const password = loginForm["login-password"].value;
   // log the user in
-  auth.signInWithEmailAndPassword(email, password).then(credential => {
+  auth.signInWithEmailAndPassword(email, password).then(cred => {
     // close the signup modal & reset form
     const modal = document.querySelector("#modal-login");
-    console.log(credential);
-    user = credential.user;
-    loginForm.reset();
+    // console.log(cred);
+    user = cred.user;
     status();
-    $("#modal-login").modal("hide");
-    
+    $("#modal-login").modal("hide"); 
+    loginForm.reset();
     if (!user.emailVerified) {
-      
+      const errorMessage="Verifica la dirección de tú correo electrónico";
       console.log("email no verificado");
+      alert(errorMessage);
+      auth.signOut();
     }
+
+  })
+  .catch(function(error){
+    let errorMessage=error.message;
+    let errors= errorMessages (errorMessage);
+    alert(errors);
+    console.log("error log in");
+    
   });
-  
+ 
 });
 
 
-// user.reauthenticateAndRetrieveDataWithCredential(cred).then(function() {
-//   // User re-authenticated.
-// }).catch(function(error) {
-//   // An error happened.
-// });
-
 // email verification
 function sendVerification() {
-  const user = auth.currentUser;
+  let user = auth.currentUser;
+  user.updateProfile({
+    displayName:name,
+  })
 
   user
     .sendEmailVerification()
-    .then(cred => {
-      console.log("Se envio email de verificación");
+    .then(credential => {
+      alert("Te enviamos un correo de verificación");
+      // console.log("Se envio email de verificación");
     })
     .catch(function(error) {
       // An error happened.
+      console.log(error);
     });
 }
 
+
 function outSesion() {
-  firebase
-    .auth()
-    .signOut()
+ 
+    auth.signOut()
     .then(function() {
-      // Sign-out successful.
+      // window.location.reload(true);
       welcomeScreen.style.display = "block";
+      
       homeScreen.style.display = "none";
+      home.style.display="none";
+      // home.style.display="none";
     })
     .catch(function(error) {
+      console.log(error);
       // An error happened.
     });
 }
 document.getElementById("closeSesion").addEventListener("click", outSesion);
 
-//   const app = {
-//   pages: [],
-//   show: new Event('show'),
-//   init: function(){
-//       app.pages = document.querySelectorAll('.page');
-//       app.pages.forEach((pg)=>{
-//           pg.addEventListener('show', app.pageShown);
-//       })
-
-//       document.querySelectorAll('.nav-link').forEach((link)=>{
-//           link.addEventListener('click', app.nav);
-//       })
-//       history.replaceState({}, 'Home', '#home');
-//       window.addEventListener('popstate', app.poppin);
-//   },
-//   nav: function(ev){
-//       ev.preventDefault();
-//       let currentPage = ev.target.getAttribute('data-target');
-//       document.querySelector('.active').classList.remove('active');
-//       document.getElementById(currentPage).classList.add('active');
-//       console.log(currentPage)
-//       history.pushState({}, currentPage, `#${currentPage}`);
-//       document.getElementById(currentPage).dispatchEvent(app.show);
-//   },
-//   pageShown: function(ev){
-//       console.log('Page', ev.target.id, 'just shown');
-//       let h1 = ev.target.querySelector('h1');
-//       h1.classList.add('big')
-//       setTimeout((h)=>{
-//           h.classList.remove('big');
-//       }, 1200, h1);
-//   },
-//   poppin: function(ev){
-//       console.log(location.hash, 'popstate event');
-//       let hash = location.hash.replace('#' ,'');
-//       document.querySelector('.active').classList.remove('active');
-//       // document.getElementById(hash).classList.add('active');
-//       console.log(hash)
-//       //history.pushState({}, currentPage, `#${currentPage}`);
-//       document.getElementById(hash).dispatchEvent(app.show);
-//   }
-// }
-// document.addEventListener('DOMContentLoaded', app.init);
- 
-
+//Función para mostrar mensajes de error en español
+const errorMessages = (errorMessage)=>{
+  switch (errorMessage) {
+  case 'Password should be at least 6 characters':
+    return "La contraseña debe tener al menos 6 dígitos";
+  case 'The email address is badly formatted.':
+    return "Introduce un email válido";
+  case "The email address is already in use by another account.":
+    return "Este email ya está registrado";
+  case "The password is invalid or the user does not have a password.":
+    return "La contrseña es incorrecta";
+  case "There is no user record corresponding to this identifier. The user may have been deleted.":
+    return "No hay un usuario registrado con éste correo";
+    break;
+    default:
+    return errorMessage;
+}
+  }
