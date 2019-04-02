@@ -12,7 +12,7 @@
 body{
   font-family: 'Caudex', serif;
   overflow-x: hidden;
-  overflow-y: hidden;
+  overflow-y: auto;
 }
 #logo{
 
@@ -100,20 +100,20 @@ p {
   display: none;
   width: 100%;
   min-height: 100%; /* allow for content off the bottom of the page */
-  position: fixed;  /* or absolute if the user needs to scroll for more content */
+  position: absolute;  /* or absolute if the user needs to scroll for more content */
   padding: 1rem 2rem;
 }
 .active{
   display: block; 
 }
 #home{
-  background-color: #F57D55;
+  background-color: #faf2f3;
 }
 #perfil{
-  background-color: #D25748;
+  background-color: #faf2f3;
 }
 #transporte{
-  background-color: #D248A0;
+  background-color: #faf2f3;
 }
 h1{
   font-size: 2rem;
@@ -127,6 +127,13 @@ h1{
 
 textarea{
   resize: none;
-  max-width: 40rem;
+  /* max-width: 100rem; */
+  width: 50rem;
   word-wrap: break-word;
+  border: none;
+  border-radius: 1rem;
+}
+.centerPost{
+  align-items: center;
+  text-align: -webkit-center;
 }

@@ -176,38 +176,75 @@
         <h1>Inicio</h1>
         <!-- <div id="myWall"> -->
       <div class=" justify-content-md-center">
-        <div class="col-md-auto">      
-          <textarea class="control"  id="post" placeholder="Compartenos alguna experiencia" rows="5"  maxlength="250"></textarea><br/>
+        <div class="col-md-auto"> 
+          <div class="col-md-auto centerPost">    
+          <textarea class="control centerPost"  id="post" placeholder="Compartenos alguna experiencia" rows="5"  maxlength="250"></textarea><br/>
           <button class= "btn btn-info" id= "btnPost"  onclick="save()">Compartir</button>
-        
-          <table class="table my-3">
-              <thead>
-                <tr>
-                  <th scope="col">Usuario</th>
-                  <th scope="col">Comentario</th>
-                  <th scope="col">Eliminar</th>
-                  <th scope="col">Editar</th>
-                </tr>
-              </thead>
-              <tbody id= "table-data">
-                <tr>
-                  <th scope="row">1</th>
-                  <td>Mark</td>
-                  <td>Otto</td>
-                  <td>@mdo</td>
-                </tr>
-              </tbody>
-            </table>
+            <div class="select">
+              <select name="filterPost" id="filterPost">
+                <option value="Publico">Público</option>
+                <option value="Privado">Amigos</option>
+              </select>
+            </div>
+            <div id="table-data"></div>
+          </div> 
         </div>
       </div>
     </div><!-- fin div inicio -->
 
     <div class="page"  id="perfil">
         <h1>Perfil</h1>
+        <form>
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="inputEmail4">Email</label>
+                <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
+              </div>
+              <div class="form-group col-md-6">
+                <label for="inputPassword4">Password</label>
+                <input type="password" class="form-control" id="inputPassword4" placeholder="Password">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="inputAddress">Address</label>
+              <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+            </div>
+            <div class="form-group">
+              <label for="inputAddress2">Address 2</label>
+              <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
+            </div>
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="inputCity">City</label>
+                <input type="text" class="form-control" id="inputCity">
+              </div>
+              <div class="form-group col-md-4">
+                <label for="inputState">State</label>
+                <select id="inputState" class="form-control">
+                  <option selected>Choose...</option>
+                  <option>...</option>
+                </select>
+              </div>
+              <div class="form-group col-md-2">
+                <label for="inputZip">Zip</label>
+                <input type="text" class="form-control" id="inputZip">
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="gridCheck">
+                <label class="form-check-label" for="gridCheck">
+                  Check me out
+                </label>
+              </div>
+            </div>
+            <button type="submit" class="btn btn-primary">Sign in</button>
+          </form>
     </div><!-- fin div perfil -->
 
     <div class="page" id="transporte">
         <h1>Transporte</h1>
+
     </div><!-- fin div transporte -->
   </main>
   
