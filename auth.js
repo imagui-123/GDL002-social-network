@@ -12,6 +12,31 @@ const loginForm = document.querySelector(".login-form");
 // // obtener el usuario que accedio
 let user = auth.currentUser;
 
+
+signupForm.addEventListener("submit", e => {
+  e.preventDefault();
+  // get user info
+  const email = signupForm["signup-email"].value;
+  const password = signupForm["signup-password"].value;
+  
+  // sign up the user
+  auth.createUserWithEmailAndPassword(email, password).then(cred => {
+    // close the signup modal & reset form
+    
+    const modal = document.querySelector("#modal-signup");
+    sendVerification();
+    signupForm.reset();
+    
+    $("#modal-signup").modal("hide"); 
+   
+  })
+  .catch(function(error){
+    let errorMessage=error.message;
+    let errors=errorMessages (errorMessage);
+    alert(errors);
+  })
+});
+
 //listen for auth status changes
 function status() {
   auth.onAuthStateChanged(user => {
@@ -34,37 +59,19 @@ function status() {
   });
 }
 
-
-
-signupForm.addEventListener("submit", e => {
-  e.preventDefault();
-  // get user info
-  const email = signupForm["signup-email"].value;
-  const password = signupForm["signup-password"].value;
-  // sign up the user
-  auth.createUserWithEmailAndPassword(email, password).then(cred => {
-    // close the signup modal & reset form
-    
-    const modal = document.querySelector("#modal-signup");
-    sendVerification();
-    signupForm.reset();
-    $("#modal-signup").modal("hide"); 
-   
-  })
-  .catch(function(error){
-    let errorMessage=error.message;
-    let errors=errorMessages (errorMessage);
-    alert(errors);
-  })
-});
+//   db.collection("users").add({
+//       first: nombre,
+//       last: apellido
 
 // function saveData(uid){
+// let nombre= document.getElementById("nombre").value;
+// let apellido= document.getElementById("apellido").value;
 //   let user= {
 //     nombre: nombre.value,
 //     apellido: apellido.value,
 //   }
 //   //dentro de la rama usuarios, se guarda el usuario con su uid
-//   firebase.database().ref("/users/" + uid)
+//   db.collection.add("/users/" + uid)
 //   .set(user);
 // }
 
@@ -158,3 +165,5 @@ const errorMessages = (errorMessage)=>{
     return errorMessage;
 }
   }
+
+ 

@@ -18,6 +18,7 @@
   
 
     <section id="bienvenida">
+        <!-- <meta http-equiv="refresh" content="10; "  location.hash = "#bienvenida";> -->
         <div class="body row w-100">
             <div class="col-md-6">
                 <img class="card-img-top mx-auto d-block" src="../GDL002-social-network/img/logofin3.png" id="logo"
@@ -81,14 +82,14 @@
             </div>
             <div class="modal-body  bk-color">
               <form class="signup-form">
-                  <!-- <div class="input-field">
+                  <div class="input-field">
                       <input type="text" id="nombre" placeholder="Escribe tú nombre" class="form-control mt-2"
                         required autocomplete="off" />
                     </div>
                     <div class="input-field">
                         <input type="text" id="apellido" placeholder="Escribe tú apellido" class="form-control mt-2"
                           required autocomplete="off" />
-                      </div> -->
+                      </div>
                 <div class="input-field">
                   <input type="email" id="signup-email" placeholder="Dirección de Correo" class="form-control mt-2"
                     required autocomplete="off" />
@@ -142,6 +143,7 @@
     
   <main> 
     <div class="nav" id="navInicio">
+        
         <nav class="navbar navbar-light" style="background-color: #eddcde;">
             <nav class="navbar navbar-expand-lg " >
                   <img width="55rem" src="./img/logofin3.png">
@@ -170,13 +172,13 @@
           <!-- <button id="closeSesion">cerrar sesion</button> -->
     </div><!-- fin div inicio -->
 
-    <div class="page active" id="home">
+    <div class="page active" id="home" >
         <h1>Inicio</h1>
         <!-- <div id="myWall"> -->
       <div class=" justify-content-md-center">
         <div class="col-md-auto">      
-          <textarea class="control"  id="nombre" placeholder="Compartenos alguna experiencia" rows="5"  maxlength="250"></textarea><br/>
-          <button class= "btn btn-info" id= "boton"  onclick="save()">Compartir</button>
+          <textarea class="control"  id="post" placeholder="Compartenos alguna experiencia" rows="5"  maxlength="250"></textarea><br/>
+          <button class= "btn btn-info" id= "btnPost"  onclick="save()">Compartir</button>
         
           <table class="table my-3">
               <thead>
@@ -200,7 +202,7 @@
       </div>
     </div><!-- fin div inicio -->
 
-    <div class="page" id="perfil">
+    <div class="page"  id="perfil">
         <h1>Perfil</h1>
     </div><!-- fin div perfil -->
 
