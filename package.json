@@ -2,9 +2,12 @@
   "name": "social-network",
   "version": "1.0.0",
   "description": "Diana es una chica de 25 años a la que le gusta viajar sola o con su grupo de amigas. En su último viaje tuvo una mala experiencia en el hospedaje ya que por un portal de internet rento una cabaña costosa y al llegar a la dirección que le proporcionaron no existía dicha cabaña y decidió que a partir de entonces planificará con más cuidado sus próximos viajes.\r Dentro de seis meses volverá a viajar y ahora en la planeación de su viaje se ha encontrado con mucha información, demasiado dispersa y además no se siente segura al apartar su hospedaje, y también tiene la incertidumbre de que transporte le sería más accesible en cuestiones de precios.\r A Diana le gustaría contar con una aplicación donde pudiera encontrar información más precisa y tener acceso a experiencias de otras viajeras que le ayuden en la planificación, le den tips, y sobre todo acceso a contactos seguros de transporte y hospedaje.",
-  "main": "index.js",
+  "main": "src/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "htmlhint": "htmlhint src/*.html test/*.html",
+    "eslint": "eslint --ext .js src/ test/",
+    "pretest": "npm run eslint --silent && npm run htmlhint",
+    "test": "jest --coverage",
     "format": "prettier --write \"**/*.js\""
   },
   "repository": {
