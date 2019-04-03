@@ -21,6 +21,10 @@ Por medio de una encuesta en la cual se les preguntó sobre:
 *¿Te sentirás más segura, al viajar sola, consultando una red social, orientada a Mujeres Viajeras?
 *¿Qué te gustaría poder hacer dentro de nuestra aplicación?
 
+![Img1](img//graficaSentirSegura.png)
+![Img1](img//dentro-de-la-aplicación.png)
+![Img1](img//comentarios-sugerencias-red-social.png)
+
 ## Qué problema resuelve el producto para estos usuarios
 *Resuelve la  problemática de la inseguridad de las mujeres al viajar solas   
 
@@ -45,6 +49,7 @@ Por medio de una encuesta en la cual se les preguntó sobre:
 ![Img1](img//registrarse.jpg)
 ![Img1](img//menu_despegable.jpg)
 ![Img1](img//post.jpg)
+
 En este diseño se muestran las primeras primeras propuestas para las pantallas, donde se muestran las acciones:
 
 1.- Inicio de Sesión.
@@ -58,3 +63,7 @@ En este diseño se muestran las primeras primeras propuestas para las pantallas,
   3.- Menú desplegable.
 
   En el menú desplegable encontraremos diferentes secciones, donde cada una de ellas nos lleva a su muro correspondiente. En cada muro se podrá hacer un post relacionado a la sección seleccionada.
+
+### Prototipo Inicial de alta fidelidad:
+Nuestro objetivo es llegar a este diseño y funcionalidad:
+  [Open Soy Viajera Figma](https://www.figma.com/file/GpvcC5Cah4zus2vh5niMmPlt/Untitled?node-id=0%3A1)

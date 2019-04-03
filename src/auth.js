@@ -1,14 +1,21 @@
-const welcomeScreen = document.getElementById("bienvenida");
-const homeScreen = document.getElementById("navInicio");
+const welcomeScreen = document.getElementById('bienvenida');
 
-const home=document.getElementById("home");
-const carouselScreen= document.getElementById("carouselExampleSlidesOnly");
+const homeScreen = document.getElementById('navInicio');
+
+const home=document.getElementById('home');
+const carouselScreen= document.getElementById('carouselExampleSlidesOnly');
+// const btnPublic=document.getElementById("btnPublic");
+// const btnFriends=document.getElementById("btnFriends");
+const callShowFriends="";
 home.style.display="none";
 
+
+
+
 // signup
-const signupForm = document.querySelector(".signup-form");
+const signupForm = document.querySelector('.signup-form');
 // login
-const loginForm = document.querySelector(".login-form");
+const loginForm = document.querySelector('.login-form');
 // // obtener el usuario que accedio
 let user = auth.currentUser;
 
