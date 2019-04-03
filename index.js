@@ -1,5 +1,5 @@
 // const home = document.getElementById("home");
-let collectionName = "";
+
 const app = {
   pages: [],
   show: new Event('show'),
@@ -21,12 +21,12 @@ const app = {
     let currentPage = ev.target.getAttribute('data-target');
     document.querySelector('.active').classList.remove('active');
     document.getElementById(currentPage).classList.add('active');
-    // console.log(currentPage);
+    console.log(currentPage);
     history.pushState({}, currentPage, `#${currentPage}`);
     document.getElementById(currentPage).dispatchEvent(app.show);
   },
   pageShown: function (ev) {
-    // console.log('Page', ev.target.id, 'just shown');
+    console.log('Page', ev.target.id, 'just shown');
     let h1 = ev.target.querySelector('h1');
     h1.classList.add('big');
     setTimeout(
@@ -111,7 +111,7 @@ if (btnPost) {
         .add({
           post: post,
           filter: select.value,
-          // likes: likes
+          likes: likes
           //last: lastName,
           //born: date,
         })

@@ -13,7 +13,7 @@
     const auth = firebase.auth();
     const db = firebase.firestore();
     // update firestore settings
-    const database = firebase.database();
+    //  const database = firebase.database();
     // db.settings({ timestampsInSnapshots: true });
  
 // let uid=user.uid;

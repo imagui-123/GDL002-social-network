@@ -138,6 +138,7 @@ textarea{
   text-align: -webkit-center;
 }
 
-/* .drop{
-  align-content: space-around;
-} */
+.btnImage{
+  border: none;
+  width: 1rem;
+}

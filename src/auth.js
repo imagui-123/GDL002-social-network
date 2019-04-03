@@ -1,13 +1,13 @@
 const welcomeScreen = document.getElementById('bienvenida');
-
+const collectionName = "";
 const homeScreen = document.getElementById('navInicio');
 
-const home=document.getElementById('home');
-const carouselScreen= document.getElementById('carouselExampleSlidesOnly');
+const home = document.getElementById('home');
+const carouselScreen = document.getElementById('carouselExampleSlidesOnly');
 // const btnPublic=document.getElementById("btnPublic");
 // const btnFriends=document.getElementById("btnFriends");
-const callShowFriends="";
-home.style.display="none";
+const callShowFriends = "";
+home.style.display = "none";
 
 
 
@@ -25,23 +25,23 @@ signupForm.addEventListener("submit", e => {
   // get user info
   const email = signupForm["signup-email"].value;
   const password = signupForm["signup-password"].value;
-  
+
   // sign up the user
   auth.createUserWithEmailAndPassword(email, password).then(cred => {
     // close the signup modal & reset form
-    
+
     const modal = document.querySelector("#modal-signup");
     sendVerification();
     signupForm.reset();
-    
-    $("#modal-signup").modal("hide"); 
-   
+
+    $("#modal-signup").modal("hide");
+
   })
-  .catch(function(error){
-    let errorMessage=error.message;
-    let errors=errorMessages (errorMessage);
-    alert(errors);
-  })
+    .catch(function (error) {
+      let errorMessage = error.message;
+      let errors = errorMessages(errorMessage);
+      alert(errors);
+    })
 });
 
 //listen for auth status changes
@@ -50,18 +50,18 @@ function status() {
     if (user) {
       console.log(user);
       // console.log(user.emailVerified);
-    //  let uid=user.uid;
-    //  saveData(uid);
+      //  let uid=user.uid;
+      //  saveData(uid);
       //console.log('user logged in', user);
-      welcomeScreen.style.display ="none";
-      homeScreen.style.display ="block";
-      home.style.display="block";
-     
+      welcomeScreen.style.display = "none";
+      homeScreen.style.display = "block";
+      home.style.display = "block";
+
     } else {
       //console.log('user logged out');
       welcomeScreen.style.display = "block";
-      homeScreen.style.display ="none";
-      home.style.display="none";
+      homeScreen.style.display = "none";
+      home.style.display = "none";
     }
   });
 }
@@ -95,24 +95,24 @@ loginForm.addEventListener("submit", e => {
     // console.log(cred);
     user = cred.user;
     status();
-    $("#modal-login").modal("hide"); 
+    $("#modal-login").modal("hide");
     loginForm.reset();
     if (!user.emailVerified) {
-      const errorMessage="Verifica la dirección de tú correo electrónico";
+      const errorMessage = "Verifica la dirección de tú correo electrónico";
       console.log("email no verificado");
       alert(errorMessage);
       auth.signOut();
     }
 
   })
-  .catch(function(error){
-    let errorMessage=error.message;
-    let errors= errorMessages (errorMessage);
-    alert(errors);
-    console.log("error log in");
-    
-  });
- 
+    .catch(function (error) {
+      let errorMessage = error.message;
+      let errors = errorMessages(errorMessage);
+      alert(errors);
+      console.log("error log in");
+
+    });
+
 });
 
 
@@ -120,7 +120,7 @@ loginForm.addEventListener("submit", e => {
 function sendVerification() {
   let user = auth.currentUser;
   user.updateProfile({
-    displayName:name,
+    displayName: name,
   })
 
   user
@@ -129,7 +129,7 @@ function sendVerification() {
       alert("Te enviamos un correo de verificación");
       // console.log("Se envio email de verificación");
     })
-    .catch(function(error) {
+    .catch(function (error) {
       // An error happened.
       console.log(error);
     });
@@ -137,17 +137,17 @@ function sendVerification() {
 
 
 function outSesion() {
- 
-    auth.signOut()
-    .then(function() {
+
+  auth.signOut()
+    .then(function () {
       // window.location.reload(true);
       welcomeScreen.style.display = "block";
-      
+
       homeScreen.style.display = "none";
-      home.style.display="none";
+      home.style.display = "none";
       // home.style.display="none";
     })
-    .catch(function(error) {
+    .catch(function (error) {
       console.log(error);
       // An error happened.
     });
@@ -155,22 +155,22 @@ function outSesion() {
 document.getElementById("closeSesion").addEventListener("click", outSesion);
 
 //Función para mostrar mensajes de error en español
-const errorMessages = (errorMessage)=>{
+const errorMessages = (errorMessage) => {
   switch (errorMessage) {
-  case 'Password should be at least 6 characters':
-    return "La contraseña debe tener al menos 6 dígitos";
-  case 'The email address is badly formatted.':
-    return "Introduce un email válido";
-  case "The email address is already in use by another account.":
-    return "Este email ya está registrado";
-  case "The password is invalid or the user does not have a password.":
-    return "La contrseña es incorrecta";
-  case "There is no user record corresponding to this identifier. The user may have been deleted.":
-    return "No hay un usuario registrado con éste correo";
-    break;
+    case 'Password should be at least 6 characters':
+      return "La contraseña debe tener al menos 6 dígitos";
+    case 'The email address is badly formatted.':
+      return "Introduce un email válido";
+    case "The email address is already in use by another account.":
+      return "Este email ya está registrado";
+    case "The password is invalid or the user does not have a password.":
+      return "La contrseña es incorrecta";
+    case "There is no user record corresponding to this identifier. The user may have been deleted.":
+      return "No hay un usuario registrado con éste correo";
+      break;
     default:
-    return errorMessage;
-}
+      return errorMessage;
   }
+}
 
- 
+
