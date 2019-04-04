@@ -11,8 +11,9 @@
 
 body{
   font-family: 'Caudex', serif;
-  overflow-x: hidden;
-  overflow-y: auto;
+
+  /* overflow-x: hidden;
+  overflow-y: auto; */
 }
 #logo{
 
@@ -80,8 +81,6 @@ background-color: #eaeaea;
   display: none;
 }
 
-
-
 .slider{
   margin-top: 5rem;
   width: 10rem;
@@ -99,8 +98,9 @@ p {
 .page{
   display: none;
   width: 100%;
-  min-height: 100%; /* allow for content off the bottom of the page */
-  position: absolute;  /* or absolute if the user needs to scroll for more content */
+  height: auto;
+  /*min-height: 100%;  allow for content off the bottom of the page */
+  position: absolute;   /*or absolute if the user needs to scroll for more content */
   padding: 1rem 2rem;
 }
 .active{
@@ -109,16 +109,18 @@ p {
 #home{
   background-color: #faf2f3;
 }
-#perfil{
+/* #perfil{
   background-color: #faf2f3;
-}
-#transporte{
+} */
+#tipsAhorro{
   background-color: #faf2f3;
+  height: 200%;
 }
 h1{
   font-size: 2rem;
   font-weight: 600;
   transition: all 0.4s;
+  text-align: center;
 }
 .big{
   font-size: 5rem;
@@ -131,7 +133,7 @@ textarea{
   width: 50rem;
   word-wrap: break-word;
   border: none;
-  border-radius: 1rem;
+  border-radius: 1rem
 }
 .centerPost{
   align-items: center;
@@ -141,4 +143,14 @@ textarea{
 .btnImage{
   border: none;
   width: 1rem;
+}
+
+.btn-danger{
+  align-content: space-between;
+}
+.btn-warning{
+  align-content: space-between;
+}
+.icons{
+  align-content: center;
 }

@@ -18,7 +18,6 @@
   
 
     <section id="bienvenida">
-        <!-- <meta http-equiv="refresh" content="10; "  location.hash = "#bienvenida";> -->
         <div class="body row w-100">
             <div class="col-md-6">
                 <img class="card-img-top mx-auto d-block" src="../img/logofin3.png" id="logo"
@@ -89,7 +88,7 @@
                     <div class="input-field">
                         <input type="text" id="apellido" placeholder="Escribe tú apellido" class="form-control mt-2"
                           required autocomplete="off" />
-                      </div>
+                    </div>
                 <div class="input-field">
                   <input type="email" id="signup-email" placeholder="Dirección de Correo" class="form-control mt-2"
                     required autocomplete="off" />
@@ -137,8 +136,7 @@
         </div>
       </div>
     </section>
-
-
+ 
     
   <main> 
     <div class="nav" id="navInicio">
@@ -155,11 +153,11 @@
                     <li class="nav-item">
                       <a href="#" data-target="home" class="nav-link">Inicio</a>
                     </li>
-                    <li class="nav-item">
+                    <!-- <li class="nav-item">
                       <a  href="#" data-target="perfil" class="nav-link">Perfil</a>
-                    </li>
+                    </li> -->
                     <li class="nav-item">
-                        <a href="#" data-target="transporte" class="nav-link"> Transporte</a>
+                        <a href="#" data-target="tipsAhorro" class="nav-link"> Tips de Ahorro</a>
                       </li>
                       <li class="nav-item">
                         <a  href="#" id="closeSesion" class="nav-link">Cerrar Sesión</a>
@@ -188,7 +186,7 @@
             </div>
             <div>
               <button id="btnPublic" value="public">Público</button>
-              <button id="btnFriends" value="friends">Amigos</button>
+              <button id="btnFriends" value="friends">Amigas</button>
             </div>
             <div id="table-data"></div>
           </div> 
@@ -196,60 +194,133 @@
       </div>
     </div><!-- fin div inicio -->
 
-    <div class="page"  id="perfil">
+    <!-- <div class="page"  id="perfil">
         <h1>Perfil</h1>
-        <form>
-            <div class="form-row">
-              <div class="form-group col-md-6">
-                <label for="inputEmail4">Email</label>
-                <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
-              </div>
-              <div class="form-group col-md-6">
-                <label for="inputPassword4">Password</label>
-                <input type="password" class="form-control" id="inputPassword4" placeholder="Password">
-              </div>
-            </div>
-            <div class="form-group">
-              <label for="inputAddress">Address</label>
-              <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
-            </div>
-            <div class="form-group">
-              <label for="inputAddress2">Address 2</label>
-              <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
-            </div>
-            <div class="form-row">
-              <div class="form-group col-md-6">
-                <label for="inputCity">City</label>
-                <input type="text" class="form-control" id="inputCity">
-              </div>
-              <div class="form-group col-md-4">
-                <label for="inputState">State</label>
-                <select id="inputState" class="form-control">
-                  <option selected>Choose...</option>
-                  <option>...</option>
-                </select>
-              </div>
-              <div class="form-group col-md-2">
-                <label for="inputZip">Zip</label>
-                <input type="text" class="form-control" id="inputZip">
-              </div>
-            </div>
-            <div class="form-group">
-              <div class="form-check">
-                <input class="form-check-input" type="checkbox" id="gridCheck">
-                <label class="form-check-label" for="gridCheck">
-                  Check me out
-                </label>
-              </div>
-            </div>
-            <button type="submit" class="btn btn-primary">Sign in</button>
-          </form>
-    </div><!-- fin div perfil -->
+        
+    </div> -->
+    <!-- fin div perfil -->
 
-    <div class="page" id="transporte">
-        <h1>Transporte</h1>
+    <div class="page" id="tipsAhorro">
+        <h1>
+        <div class="icons">
+            <img src="https://cdn.icon-icons.com/icons2/516/PNG/128/coin_money_icon-icons.com_51091.png" alt="">
+            <img src="https://cdn.icon-icons.com/icons2/516/PNG/128/ideas_icon-icons.com_51068.png" alt="">
+             <img src="https://cdn.icon-icons.com/icons2/1153/PNG/128/1486564179-finance-saving_81499.png" alt="">
+        </div></h1>
+        
+        <div class="accordion" id="accordionExample">
+          <div class="card">
+            <div class="card-header" id="headingOne">
+              <h2 class="mb-0">
+                <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                  Registrar el gasto
+                </button>
+              </h2>
+            </div>
+        
+            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+              <div class="card-body">
+                <p>Si no lo mides no lo puedes controlar, lo mismo sucede con el dinero. Para empezar a ahorrar empieza a saber exactamente cuánto dinero estas gastando, es importante que registres CADA centavo que gastas, inclusive los chicles de 3 pesos que compraste en la esquina.
+                  Suena complicado, y lo es, pero a final de mes podrás ver cuánto gastaste en tonterías y te hará más consciente, además considéralo de esta forma: si cada día puedes reducir 30 pesos de gasto en cosas pequeñas como cigarros, café, chicles, etc. A final de mes eso son 900 pesos o 10,8000 en un año, de ahorro para viajar.
+                  </p>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-header" id="headingTwo">
+              <h2 class="mb-0">
+                <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                  Reduce tus gastos a la mitad.
+                </button>
+              </h2>
+            </div>
+            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+              <div class="card-body">
+                <p>Una vez que has identificado tus gastos, intenta reducirlos a la mitad. No estoy diciendo que cambies tu vida radicalmente, tan sólo que si antes comprabas 2 cafés entonces ahora compra 1, si salías una vez al cine por semana, ahora cada 2 semanas. 
+                  Te sorprenderá la cantidad de dinero que vas a ahorrar con esto.</p>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-header" id="headingThree">
+              <h2 class="mb-0">
+                <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                    Usa transporte público o cómprate una bicicleta
+                </button>
+              </h2>
+            </div>
+            <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+              <div class="card-body">
+                <p>Gasolina, seguro, tenencia, mensualidad, riesgo de chocar, desperfectos, estacionamiento, multas y muchos otros gastos que no estas consciente que tendrás cuando tienes un coche. Mi sugerencia es vende tu auto y aprende a moverte en transporte público o mejor aún, usa bicicleta. 
+                  Como dice el dicho, quema grasa y no gasolina.</p>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+              <div class="card-header" id="headingFourt">
+                <h2 class="mb-0">
+                  <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseFourt" aria-expanded="false" aria-controls="collapseFourt">
+                      Empieza tu alcancía de 10 pesos
+                  </button>
+                </h2>
+              </div>
+              <div id="collapseFourt" class="collapse" aria-labelledby="headingFourt" data-parent="#accordionExample">
+                <div class="card-body">
+                  <p>Yo comencé una alcancía donde cada vez que tenía una moneda de 10 o de 5 pesos la ponía ahí en lugar de traerla conmigo, durante 6 meses logré juntar $3,500 pesos, he conocido personas que en un año juntaron más de $12,000 pesos. 
+                    Ese es dinero suficiente para hacer un muy buen viaje.</p>
+                </div>
+              </div>
+            </div>
+            <div class="card">
+                <div class="card-header" id="headingFive">
+                  <h2 class="mb-0">
+                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                        Cambia de compañía de celular
+                    </button>
+                  </h2>
+                </div>
+                <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordionExample">
+                  <div class="card-body">
+                    <p>Hoy en día los planes de celular entre compañías son bastante competitivos, entonces ¿por que no investiga?, quizás encuentres algo mejor de lo que tienes por la mitad del precio. Por ejemplo, yo por 300 pesos al mes tenía 1GB de internet, 
+                      1000 minutos y 100 mensajes de texto y jamás me gaste todo eso.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="card">
+                  <div class="card-header" id="headingSix">
+                    <h2 class="mb-0">
+                      <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                          Evita a toda costa los créditos y los préstamos
+                      </button>
+                    </h2>
+                  </div>
+                  <div id="collapseSix" class="collapse" aria-labelledby="headingSix" data-parent="#accordionExample">
+                    <div class="card-body">
+                      <p>No gastes NUNCA dinero que no tienes o que no puedes pagar después. Las deudas son además justificaciones para mantenerte encarcelado y 
+                        sin movimiento en el mismo sitio hasta que las pagues.</p>
+                      <p>Usa una tarjeta de crédito solo para cuestiones de reputación, juntar puntos y premios, obtener ventajas de los bancos. 
+                        No le des la oportunidad de obtener ventaja alguna sobre ti.</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="card">
+                    <div class="card-header" id="headingSeven">
+                      <h2 class="mb-0">
+                        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
+                            Cena en casa antes de salir
+                        </button>
+                      </h2>
+                    </div>
+                    <div id="collapseSeven" class="collapse" aria-labelledby="headingSeven" data-parent="#accordionExample">
+                      <div class="card-body">
+                        <p>Si tus amigos te han invitado a salir a cenar o a tomar algo intenta siempre cenar antes de salir y estando ahí tan sólo pide algo de tomar, no es lo mismo pagar la cuenta de una cena completa que tan sólo de un par de cervezas. 
+                          Ya lo tienes, cada uno de estos tips te ayudará a lograr la meta de ahorrar.</p>
+                      </div>
+                    </div>
+                  </div>
+        </div>
 
-    </div><!-- fin div transporte -->
+    </div><!-- fin div tips de ahorro -->
   </main>
   
 </body>
@@ -270,8 +341,6 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
   integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
  
-<!-- <script src="main.js"></script>
-    <script src="data.js"></script> -->
     <script src="auth.js" ></script>
     <!-- async="async" -->
     <!-- <script src="main.js"></script> -->
