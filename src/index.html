@@ -109,8 +109,7 @@
     
       <!-- LOGIN Modal -->
       <section>
-      <div id="modal-login" class="modal"  tabindex="-1" data-backdrop="static"
-      data-keyboard="false" >
+      <div id="modal-login" class="modal"  tabindex="-1" data-backdrop="static" data-keyboard="false" >
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header main-color" >
@@ -140,7 +139,6 @@
     
   <main> 
     <div class="nav" id="navInicio">
-        
         <nav class="navbar navbar-light" style="background-color: #eddcde;">
             <nav class="navbar navbar-expand-lg " >
                   <img width="55rem" src="../img/logofin3.png">
@@ -151,7 +149,7 @@
                 <div class="collapse navbar-collapse" id="navbarText">
                   <ul class="navbar-nav mr-auto">
                     <li class="nav-item">
-                      <a href="#" data-target="home" class="nav-link">Inicio</a>
+                      <a href="#" data-target="wall" class="nav-link">Inicio</a>
                     </li>
                     <!-- <li class="nav-item">
                       <a  href="#" data-target="perfil" class="nav-link">Perfil</a>
@@ -169,24 +167,28 @@
           <!-- <button id="closeSesion">cerrar sesion</button> -->
     </div><!-- fin div inicio -->
     
-    <div class="page active" id="home" >
-        <h1>Inicio</h1>
+    <div class="page active" id="wall" >
+      <div class="col-md-12 iconBar">
+          <h1 class= "travelIcons col-md-12"><i class="fas fa-plane-departure"></i><i class="fas fa-passport"></i><i class="fas fa-globe-americas"></i><i class="fas fa-map-marked-alt"></i></h1>
+      </div>
+        
         <!-- <div id="myWall"> -->
       <div class=" justify-content-md-center">
         <div class="col-md-auto"> 
           <div class="col-md-auto centerPost">    
-          <textarea class="control centerPost"  id="post" placeholder="Compartenos alguna experiencia" rows="5"  maxlength="250"></textarea><br/>
-          <button class= "btn btn-info" id= "btnPost" >Compartir</button>
-          <button class= "btn btn-info" id= "btnSave" >Guardar</button>
+          <textarea class="control centerPost borderPost"  id="post" placeholder="Compartenos alguna experiencia" rows="5"  maxlength="250"></textarea><br/>
+          <button class= "btn btn-info btncolor" id= "btnPost" >Compartir</button>
+          <button class= "btn btn-info btncolor" id= "btnSave" >Guardar</button>
             <div class="select  dropdown-menu-right" >
               <select name="filterPost" id="filterPost">
                 <option value="Publico">Público</option>
                 <option value="Amigos">Amigos</option>
               </select>
             </div>
-            <div>
-              <button id="btnPublic" value="public">Público</button>
-              <button id="btnFriends" value="friends">Amigas</button>
+            <div id= "valueBtns">
+              <label for=""></label>
+              <button id="btnPublic" value="public" class= "btn  btncolor btnform" > <i class="fas fa-user-lock"></i></button>
+              <button id="btnFriends" value="friends" class= "btn btncolor btnform"> <i class="fas fa-users"></i></button>
             </div>
             <div id="table-data"></div>
           </div> 
@@ -201,12 +203,7 @@
     <!-- fin div perfil -->
 
     <div class="page" id="tipsAhorro">
-        <h1>
-        <div class="icons">
-            <img src="https://cdn.icon-icons.com/icons2/516/PNG/128/coin_money_icon-icons.com_51091.png" alt="">
-            <img src="https://cdn.icon-icons.com/icons2/516/PNG/128/ideas_icon-icons.com_51068.png" alt="">
-             <img src="https://cdn.icon-icons.com/icons2/1153/PNG/128/1486564179-finance-saving_81499.png" alt="">
-        </div></h1>
+        <h1 class= "travelIcons col-md-12"><i class="far fa-credit-card"></i><i class="fas fa-money-bill-wave"></i><i class="fas fa-search-dollar"></i><i class="fas fa-dollar-sign"></i></h1>
         
         <div class="accordion" id="accordionExample">
           <div class="card">

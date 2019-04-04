@@ -1,4 +1,5 @@
 // Initialize Firebase
+
 var config = {
   apiKey: 'AIzaSyCEe4i1ctA_0VP28SkTxUADjksses3iLo4',
   authDomain: 'soy-viajera.firebaseapp.com',

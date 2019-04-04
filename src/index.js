@@ -12,6 +12,7 @@ const app = {
     document.querySelectorAll('.nav-link').forEach(link => {
       link.addEventListener('click', app.nav);
     });
+    // history.replaceState({}, 'bienvenida', '#bienvenida');
     history.replaceState({}, 'Home', '#home');
     window.addEventListener('popstate', app.poppin);
   },
@@ -43,8 +44,6 @@ const app = {
     document.querySelector('.active').classList.remove('active');
     document.getElementById(hash).classList.add('active');
     console.log(hash);
-
-    //history.pushState({}, currentPage, `#${currentPage}`);
     document.getElementById(hash).dispatchEvent(app.show);
   },
 };
@@ -134,12 +133,10 @@ function readPost() {
     querySnapshot.forEach(doc => {
       console.log(`${doc.id} => ${doc.data().post}`);
       tableData.innerHTML += `
-        <div class="card mb-3">
-            <h5 class="card-header">${doc.id} </h5>
+        <div class="card mb-3 border-secondary mb-3">
+            <h5 class="card-header border-primary">${doc.id} <div class= "likeCount"><button class="btnLike" onclick="addLikes('${doc.id}', '${doc.data().like}')"><img src="../img/likeHeart.png"><label id="likes${doc.id}">${doc.data().like}</label></button></div> </h5>
           <div class="card-body">
-            <p class="card-text">${doc.data().post}</p>
-            <button class= "btn" onclick ="addLikes('${doc.id}', '${doc.data().like}' )" >
-            <i class="fas fa-heart"></i></button>${doc.data().like}&nbsp&nbsp
+          <p class="card-text">${doc.data().post}</p>
             <button class= "btn btn-danger" onclick ="deletePost('${doc.id}' )" >Eliminar</button>
             <button class= "btn btn-warning" onclick ="editionPost('${doc.id}', '${
         doc.data().post
@@ -202,23 +199,11 @@ function editionPost(id, post) {
   };
 }
 
-let count = 0;
-
 function addLikes(id, likes) {
-  //  document.getElementById("show").value=like;
   likes++;
-  // if(count === 1){
-  //   document.getElementById("showLike").textContent= count + ' ';
-  //   likes=parseInt(likes)+1;
-  // } else{
-  //   document.getElementById("showLike").textContent= count + ' ';
-  likes = parseInt(likes);
-  // }
 
+  likes = parseInt(likes);
   let washingtonRef = db.collection(collectionName).doc(id);
-  // let like=like;
-  // let newPost = document.getElementById('post').value;
-  // likes.innerHTML = likes;
 
   return washingtonRef
     .update({
@@ -232,6 +217,4 @@ function addLikes(id, likes) {
       // The document probably doesn't exist.
       console.error('Error updating document: ', error);
     });
-
-  // };
 }

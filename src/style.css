@@ -77,10 +77,6 @@ background-color: #eaeaea;
   display: none;
 }
 
-#home{
-  display: none;
-}
-
 .slider{
   margin-top: 5rem;
   width: 10rem;
@@ -103,19 +99,26 @@ p {
   position: absolute;   /*or absolute if the user needs to scroll for more content */
   padding: 1rem 2rem;
 }
-.active{
+
+.active {
   display: block; 
 }
-#home{
-  background-color: #faf2f3;
-}
-/* #perfil{
-  background-color: #faf2f3;
+
+/* #home{
+  display: none;
+  background-color: white;
 } */
-#tipsAhorro{
-  background-color: #faf2f3;
-  height: 200%;
+
+#wall{
+  display: none;
+  background-color: white;
 }
+
+#tipsAhorro{
+  background-color: white;
+  height: 300%;
+}
+
 h1{
   font-size: 2rem;
   font-weight: 600;
@@ -133,16 +136,12 @@ textarea{
   width: 50rem;
   word-wrap: break-word;
   border: none;
-  border-radius: 1rem
+  border-radius: 1rem;
+  border: 2px solid #692a32;
 }
 .centerPost{
   align-items: center;
   text-align: -webkit-center;
-}
-
-.btnImage{
-  border: none;
-  width: 1rem;
 }
 
 .btn-danger{
@@ -153,4 +152,63 @@ textarea{
 }
 .icons{
   align-content: center;
+}
+
+.btnLike{
+  border: none;
+  background-color: #f7f7f7;
+}
+
+.likeCount{
+  padding-left: 70rem;
+}
+
+.travelIcons{
+  text-align: center;
+}
+
+.travelIcons i{ 
+  color: #69494e;
+  align-items: center;
+  margin: 1% 1.5% 1% 1.5%;
+  opacity: 0.7;
+  text-align: center;
+}
+
+#filterPost{
+  background-color: white;
+  color: black;
+  border: 2px solid #69494e;
+  margin: 1rem;
+}
+
+#valueBtns{
+  margin: 1% 1.5% 1% 1.5%;
+}
+
+.btnform{
+  border-radius: 50%;
+  background: #95ffdc;
+  border: 2px solid #95ffdc;
+ }
+ .borderPost{
+  border: 2px solid #692a32;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+/*.cardBorder{
+  border-color: 2px solid #abffe3;
+} */
+
+.iconBar{
+  width: 40%;
+  background-color: white;
+  opacity: 0.8;
+  border: 2px solid #e95c6f;
+  border-radius: 5rem;
+  margin-left: auto;
+  margin-right:auto;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  
 }

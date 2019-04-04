@@ -27,6 +27,8 @@
     "eslint": "^5.16.0",
     "eslint-plugin-react": "^7.12.4",
     "eslint-plugin-vue": "^5.2.2",
-    "htmlhint": "^0.10.3"
+    "firebase-functions-test": "^0.1.6",
+    "htmlhint": "^0.10.3",
+    "mocha": "^6.0.2"
   }
 }

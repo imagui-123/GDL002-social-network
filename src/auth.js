@@ -2,12 +2,12 @@ const welcomeScreen = document.getElementById('bienvenida');
 
 const homeScreen = document.getElementById('navInicio');
 
-const home = document.getElementById('home');
+let home = document.getElementById('wall');
 const carouselScreen = document.getElementById('carouselExampleSlidesOnly');
 // const btnPublic=document.getElementById("btnPublic");
 // const btnFriends=document.getElementById("btnFriends");
 const callShowFriends = '';
-home.style.display = 'none';
+// home.style.display = 'none';
 
 // signup
 const signupForm = document.querySelector('.signup-form');
