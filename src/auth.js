@@ -1,16 +1,12 @@
 let auth = firebase.auth();
-import firebase from "firebase";
-// let db = firebase.firestore();
+
+ let db = firebase.firestore();
 
 const welcomeScreen = document.getElementById('bienvenida');
 
 const homeScreen = document.getElementById('navInicio');
 
 let home = document.getElementById('wall');
-// const carouselScreen = document.getElementById('carouselExampleSlidesOnly');
-// const btnPublic=document.getElementById("btnPublic");
-// const btnFriends=document.getElementById("btnFriends");
-// home.style.display = 'none';
 
 // signup
 const signupForm = document.querySelector('.signup-form');
@@ -18,24 +14,45 @@ const signupForm = document.querySelector('.signup-form');
 const loginForm = document.querySelector('.login-form');
 // // obtener el usuario que accedio
 let user = auth.currentUser;
+let name, uid;
+
+if(user !=null){
+  name=user.displayName;
+  uid=user.uid;
+}
 
 signupForm.addEventListener('submit', e => {
   e.preventDefault();
   // get user info
   const email = signupForm['signup-email'].value;
   const password = signupForm['signup-password'].value;
-  saveData();
+  let name= document.getElementById("nombre").value;
+  let apellido= document.getElementById("apellido").value;
+  // let uid=user.uid;
+
+  db.collection("users").doc().set({
+    // userid: id,
+    nombre: name,
+    apellido: apellido
+  })
+  .then(function() {
+    // console.log("Document successfully written!");
+})
+.catch(function(error) {
+    // console.error("Error writing document: ", error);
+});
+  
   // sign up the user
   auth
     .createUserWithEmailAndPassword(email, password)
-    .then(credential => {
+    .then(cred => {
       // close the signup modal & reset form
-
+      
       const modal = document.querySelector('#modal-signup');
       sendVerification();
       signupForm.reset();
-
-      $('#modal-signup').modal('hide');
+      modal.modal('hide');
+      // $('#modal-signup').modal('hide');
     })
     .catch(function(error) {
       let errorMessage = error.message;
@@ -49,6 +66,9 @@ function status() {
   auth.onAuthStateChanged(user => {
     if (user) {
       console.log(user);
+      // let name=user.name;
+      let email= user.email;
+      let uid= user.uid;
       // console.log(user.emailVerified);
       //  let uid=user.uid;
       //  saveData(uid);
@@ -65,28 +85,6 @@ function status() {
   });
 }
 
-//   db.collection("users").add({
-//       first: nombre,
-//       last: apellido
-
-function saveData(uid){
-let nombre= document.getElementById("nombre").value;
-let apellido= document.getElementById("apellido").value;
-  db.collection("users").add({
-    first: nombre.value,
-    last: apellido.value
-  })
-  .then(function(docRef) {
-    console.log("Document written with ID: ", docRef.id);
-  })
-.catch(function(error) {
-    console.error("Error adding document: ", error);
-  });
-  }
-//   //dentro de la rama usuarios, se guarda el usuario con su uid
-//   db.collection.add("/users/" + uid)
-//   .set(user);
-// }
 
 loginForm.addEventListener('submit', e => {
   e.preventDefault();
@@ -107,7 +105,7 @@ loginForm.addEventListener('submit', e => {
       loginForm.reset();
       if (!user.emailVerified) {
         const errorMessage = 'Verifica la dirección de tú correo electrónico';
-        console.log('email no verificado');
+        // console.log('email no verificado');
         alert(errorMessage);
         auth.signOut();
       }
@@ -116,7 +114,7 @@ loginForm.addEventListener('submit', e => {
       let errorMessage = error.message;
       let errors = errorMessages(errorMessage);
       alert(errors);
-      console.log('error log in');
+      // console.log('error log in');
     });
 });
 
@@ -135,7 +133,7 @@ function sendVerification() {
     })
     .catch(function(error) {
       // An error happened.
-      console.log(error);
+      // console.log(error);
     });
 }
 
@@ -151,7 +149,7 @@ function outSesion() {
       // home.style.display="none";
     })
     .catch(function(error) {
-      console.log(error);
+      // console.log(error);
       // An error happened.
     });
 }

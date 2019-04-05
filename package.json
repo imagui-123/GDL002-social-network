@@ -27,19 +27,7 @@
     "jest": "^24.6.0",
     "nodejs-latest": "^1.1.0"
   },
-  "keywords": [
-    "static",
-    "server",
-    "firebase",
-    "hosting",
-    "pushstate",
-    "html5",
-    "router",
-    "file",
-    "directory",
-    "hash",
-    "hashbang"
-  ],
+
   "devDependencies": {
     "eslint": "^5.16.0",
     "eslint-plugin-react": "^7.12.4",
