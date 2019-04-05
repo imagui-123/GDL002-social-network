@@ -1,4 +1,7 @@
 // const home = document.getElementById("home");
+// let auth = firebase.auth();
+let db = firebase.firestore();
+import firebase from "firebase";
 let collectionName = '';
 const app = {
   pages: [],

@@ -1,12 +1,15 @@
+let auth = firebase.auth();
+import firebase from "firebase";
+// let db = firebase.firestore();
+
 const welcomeScreen = document.getElementById('bienvenida');
 
 const homeScreen = document.getElementById('navInicio');
 
 let home = document.getElementById('wall');
-const carouselScreen = document.getElementById('carouselExampleSlidesOnly');
+// const carouselScreen = document.getElementById('carouselExampleSlidesOnly');
 // const btnPublic=document.getElementById("btnPublic");
 // const btnFriends=document.getElementById("btnFriends");
-const callShowFriends = '';
 // home.style.display = 'none';
 
 // signup
@@ -21,11 +24,11 @@ signupForm.addEventListener('submit', e => {
   // get user info
   const email = signupForm['signup-email'].value;
   const password = signupForm['signup-password'].value;
-
+  saveData();
   // sign up the user
   auth
     .createUserWithEmailAndPassword(email, password)
-    .then(cred => {
+    .then(credential => {
       // close the signup modal & reset form
 
       const modal = document.querySelector('#modal-signup');
@@ -66,13 +69,20 @@ function status() {
 //       first: nombre,
 //       last: apellido
 
-// function saveData(uid){
-// let nombre= document.getElementById("nombre").value;
-// let apellido= document.getElementById("apellido").value;
-//   let user= {
-//     nombre: nombre.value,
-//     apellido: apellido.value,
-//   }
+function saveData(uid){
+let nombre= document.getElementById("nombre").value;
+let apellido= document.getElementById("apellido").value;
+  db.collection("users").add({
+    first: nombre.value,
+    last: apellido.value
+  })
+  .then(function(docRef) {
+    console.log("Document written with ID: ", docRef.id);
+  })
+.catch(function(error) {
+    console.error("Error adding document: ", error);
+  });
+  }
 //   //dentro de la rama usuarios, se guarda el usuario con su uid
 //   db.collection.add("/users/" + uid)
 //   .set(user);
@@ -160,7 +170,7 @@ const errorMessages = errorMessage => {
       return 'La contrseña es incorrecta';
     case 'There is no user record corresponding to this identifier. The user may have been deleted.':
       return 'No hay un usuario registrado con éste correo';
-      break;
+      // break;
     default:
       return errorMessage;
   }
