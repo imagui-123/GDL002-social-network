@@ -1,0 +1,39 @@
+{
+  "name": "social-network",
+  "version": "1.0.0",
+  "description": "Diana es una chica de 25 años a la que le gusta viajar sola o con su grupo de amigas. En su último viaje tuvo una mala experiencia en el hospedaje ya que por un portal de internet rento una cabaña costosa y al llegar a la dirección que le proporcionaron no existía dicha cabaña y decidió que a partir de entonces planificará con más cuidado sus próximos viajes.\r Dentro de seis meses volverá a viajar y ahora en la planeación de su viaje se ha encontrado con mucha información, demasiado dispersa y además no se siente segura al apartar su hospedaje, y también tiene la incertidumbre de que transporte le sería más accesible en cuestiones de precios.\r A Diana le gustaría contar con una aplicación donde pudiera encontrar información más precisa y tener acceso a experiencias de otras viajeras que le ayuden en la planificación, le den tips, y sobre todo acceso a contactos seguros de transporte y hospedaje.",
+  "main": "src/index.html",
+  "scripts": {
+    "htmlhint": "htmlhint src/*.html test/*.html",
+    "eslint": "eslint --ext .js src/ test/",
+    "pretest": "npm run eslint && npm run htmlhint",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/imagui-123/GDL002-social-network.git"
+  },
+  "author": "Iris Ana Andrea",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/imagui-123/GDL002-social-network/issues"
+  },
+  "homepage": "https://github.com/imagui-123/GDL002-social-network#readme",
+  "dependencies": {
+    "connect": "^3.6.6",
+    "eslint-plugin-jest": "^22.1.2",
+    "firebase": "^5.9.3",
+    "firebase-admin": "^7.2.0",
+    "jest": "^24.6.0",
+    "nodejs-latest": "^1.1.0"
+  },
+
+  "devDependencies": {
+    "eslint": "^5.16.0",
+    "eslint-plugin-react": "^7.12.4",
+    "eslint-plugin-vue": "^5.2.2",
+    "firebase-functions-test": "^0.1.6",
+    "htmlhint": "^0.10.3",
+    "mocha": "^6.0.2"
+  }
+}

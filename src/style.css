@@ -1,0 +1,219 @@
+/* @media only screen and (min-width : 320px) and (max-width : 500px) {
+ 
+  .card-img-top{
+    align-content: center;
+    
+    
+  }
+} */
+
+
+
+body{
+  font-family: 'Caudex', serif;
+
+  /* overflow-x: hidden;
+  overflow-y: auto; */
+}
+#logo{
+
+  align-content: center;
+}
+#slogan{
+width: 32.7rem;
+margin-left: auto;
+margin-right: auto;
+}
+
+.logo-barra{
+width: 10%;
+}
+
+
+/*centrar input text del slogan*/
+.close{
+  margin-left: auto;
+  margin-right: auto;
+}
+/*cambiar color input text del slogan*/
+form .form-control::-moz-placeholder {
+  color: black;
+  opacity: 1;
+}
+form .form-control:-ms-input-placeholder {
+  color: black;
+ }
+form .form-control::-webkit-input-placeholder {
+  color: black;
+}
+
+#principal-btn{
+text-align: center;
+}
+
+
+.fa-1x {
+font-size: 1.5rem;
+}
+.navbar-toggler.toggler-example {
+cursor: pointer;
+}
+
+.dark-pink-text {
+color: #AC003A;
+}
+
+.btncolor{
+background-color: #e95c6f;
+border: #b64857;
+}
+
+.main-color{
+background-color: #e95c6f;
+color: white;
+
+}
+
+.bk-color{
+background-color: #eaeaea;
+}
+
+#navInicio{
+  display: none;
+}
+
+.slider{
+  margin-top: 5rem;
+  width: 10rem;
+  height: 3rem;
+}
+
+.hide {
+  display : none;
+}
+p {
+  padding: 5px;
+}
+
+/**** PAGES ****/
+.page{
+  display: none;
+  width: 100%;
+  height: auto;
+  /*min-height: 100%;  allow for content off the bottom of the page */
+  position: absolute;   /*or absolute if the user needs to scroll for more content */
+  padding: 1rem 2rem;
+}
+
+.active {
+  display: block; 
+}
+
+/* #home{
+  display: none;
+  background-color: white;
+} */
+
+#wall{
+  display: none;
+  background-color: white;
+}
+
+#tipsAhorro{
+  background-color: white;
+  height: 300%;
+}
+
+h1{
+  font-size: 2rem;
+  font-weight: 600;
+  transition: all 0.4s;
+  text-align: center;
+}
+
+h3{
+display: none;
+
+}
+.big{
+  font-size: 5rem;
+  font-weight: 900;
+}
+
+textarea{
+  resize: none;
+  /* max-width: 100rem; */
+  width: 50rem;
+  word-wrap: break-word;
+  border: none;
+  border-radius: 1rem;
+  border: 2px solid #692a32;
+}
+.centerPost{
+  align-items: center;
+  text-align: -webkit-center;
+}
+
+.btn-danger{
+  align-content: space-between;
+}
+.btn-warning{
+  align-content: space-between;
+}
+.icons{
+  align-content: center;
+}
+
+.btnLike{
+  border: none;
+  background-color: #f7f7f7;
+}
+
+.travelIcons{
+  text-align: center;
+}
+
+.travelIcons i{ 
+  color: #69494e;
+  align-items: center;
+  margin: 1% 1.5% 1% 1.5%;
+  opacity: 0.7;
+  text-align: center;
+}
+
+#filterPost{
+  background-color: white;
+  color: black;
+  border: 2px solid #69494e;
+  margin: 1rem;
+}
+
+#valueBtns{
+  margin: 1% 1.5% 1% 1.5%;
+}
+
+.btnform{
+  border-radius: 50%;
+  background: #95ffdc;
+  border: 2px solid #95ffdc;
+ }
+ .borderPost{
+  border: 2px solid #692a32;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+/*.cardBorder{
+  border-color: 2px solid #abffe3;
+} */
+
+.iconBar{
+  width: 40%;
+  background-color: white;
+  opacity: 0.8;
+  border-radius: 5rem;
+  margin-left: auto;
+  margin-right:auto;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  
+}
