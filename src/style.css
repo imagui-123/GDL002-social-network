@@ -25,6 +25,11 @@ margin-left: auto;
 margin-right: auto;
 }
 
+.logo-barra{
+width: 10%;
+}
+
+
 /*centrar input text del slogan*/
 .close{
   margin-left: auto;
@@ -125,6 +130,11 @@ h1{
   transition: all 0.4s;
   text-align: center;
 }
+
+h3{
+display: none;
+
+}
 .big{
   font-size: 5rem;
   font-weight: 900;
@@ -157,10 +167,6 @@ textarea{
 .btnLike{
   border: none;
   background-color: #f7f7f7;
-}
-
-.likeCount{
-  padding-left: 70rem;
 }
 
 .travelIcons{
@@ -204,7 +210,6 @@ textarea{
   width: 40%;
   background-color: white;
   opacity: 0.8;
-  border: 2px solid #e95c6f;
   border-radius: 5rem;
   margin-left: auto;
   margin-right:auto;

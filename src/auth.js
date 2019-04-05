@@ -1,6 +1,6 @@
 let auth = firebase.auth();
 
- let db = firebase.firestore();
+let db=firebase.auth();
 
 const welcomeScreen = document.getElementById('bienvenida');
 
@@ -14,12 +14,12 @@ const signupForm = document.querySelector('.signup-form');
 const loginForm = document.querySelector('.login-form');
 // // obtener el usuario que accedio
 let user = auth.currentUser;
-let name, uid;
+// let name, uid;
 
-if(user !=null){
-  name=user.displayName;
-  uid=user.uid;
-}
+// if(user !=null){
+//   name=user.displayName;
+//   uid=user.uid;
+// }
 
 signupForm.addEventListener('submit', e => {
   e.preventDefault();
@@ -35,24 +35,23 @@ signupForm.addEventListener('submit', e => {
     nombre: name,
     apellido: apellido
   })
-  .then(function() {
-    // console.log("Document successfully written!");
-})
-.catch(function(error) {
-    // console.error("Error writing document: ", error);
-});
+//   .then(function() {
+//     // console.log("Document successfully written!");
+// })
+// .catch(function(error) {
+//     // console.error("Error writing document: ", error);
+// });
   
   // sign up the user
   auth
     .createUserWithEmailAndPassword(email, password)
-    .then(cred => {
+    .then(function()  {
       // close the signup modal & reset form
       
-      const modal = document.querySelector('#modal-signup');
+      // const modal = document.querySelector('#modal-signup');
       sendVerification();
       signupForm.reset();
-      modal.modal('hide');
-      // $('#modal-signup').modal('hide');
+      $('#modal-signup').modal('hide');
     })
     .catch(function(error) {
       let errorMessage = error.message;
@@ -67,8 +66,8 @@ function status() {
     if (user) {
       console.log(user);
       // let name=user.name;
-      let email= user.email;
-      let uid= user.uid;
+      // let email= user.email;
+      // let uid= user.uid;
       // console.log(user.emailVerified);
       //  let uid=user.uid;
       //  saveData(uid);
@@ -97,7 +96,7 @@ loginForm.addEventListener('submit', e => {
     .signInWithEmailAndPassword(email, password)
     .then(cred => {
       // close the signup modal & reset form
-      const modal = document.querySelector('#modal-login');
+      // const modal = document.querySelector('#modal-login');
       // console.log(cred);
       user = cred.user;
       status();
@@ -114,7 +113,7 @@ loginForm.addEventListener('submit', e => {
       let errorMessage = error.message;
       let errors = errorMessages(errorMessage);
       alert(errors);
-      // console.log('error log in');
+      console.log('error log in');
     });
 });
 
@@ -127,13 +126,13 @@ function sendVerification() {
 
   user
     .sendEmailVerification()
-    .then(credential => {
+    .then(function() {
       alert('Te enviamos un correo de verificación');
       // console.log("Se envio email de verificación");
     })
     .catch(function(error) {
       // An error happened.
-      // console.log(error);
+      console.log(error);
     });
 }
 
@@ -149,7 +148,7 @@ function outSesion() {
       // home.style.display="none";
     })
     .catch(function(error) {
-      // console.log(error);
+      console.log(error);
       // An error happened.
     });
 }

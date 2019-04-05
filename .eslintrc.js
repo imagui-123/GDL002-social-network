@@ -9,7 +9,12 @@ module.exports = {
     ],
     "globals": {
         "Atomics": "readonly",
-        "SharedArrayBuffer": "readonly"
+        "SharedArrayBuffer": "readonly",
+        "$": "readonly",
+        "firebase":"false",
+       
+        
+        
     },
     "parserOptions": {
         "ecmaVersion": 2018,
@@ -19,6 +24,7 @@ module.exports = {
         "vue"
     ],
     "rules": {
+        "no-console": "off",
     }
 };
 

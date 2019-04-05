@@ -1,7 +1,6 @@
 // const home = document.getElementById("home");
-// let auth = firebase.auth();
-db = firebase.firestore();
 
+db = firebase.firestore();
 // import firebase from "firebase";
 let collectionName = '';
 const app = {
@@ -42,7 +41,7 @@ const app = {
       h1,
     );
   },
-  poppin: function(ev) {
+  poppin: function() {
     console.log(location.hash, 'popstate event');
     let hash = location.hash.replace('#', '');
     document.querySelector('.active').classList.remove('active');
@@ -61,7 +60,7 @@ const btnPublic = document.getElementById('btnPublic');
 const btnFriends = document.getElementById('btnFriends');
 let select = document.getElementById('filterPost');
 
-
+let selected;
 
 if (btnFriends) {
   btnFriends.addEventListener('click', () => {
@@ -85,7 +84,7 @@ function init() {
 }
 
 function filterSelected() {
-  let selected = select.value;
+   selected = select.value;
   if (selected == 'Publico') {
     collectionName = 'userPost';
   } else if (selected == 'Amigos') {
@@ -117,7 +116,7 @@ if (btnPost) {
   
         })
         .then(function(docRef) {
-          // console.log('Document written with ID: ', docRef.id);
+          console.log('Document written with ID: ', docRef.id);
           document.getElementById('post').value = '';
           document.getElementById('filterPost').value = '';
           db.collection('users');
@@ -125,7 +124,7 @@ if (btnPost) {
           
         })
         .catch(function(error) {
-          // console.error('Error adding document: ', error);
+          console.error('Error adding document: ', error);
         });
     }
   });
@@ -143,7 +142,7 @@ function readPost() {
       // console.log(`${doc.id} => ${doc.data().nombre}`);
       tableData.innerHTML += `
         <div class="card mb-3 border-secondary mb-3">
-            <h5 class="card-header border-primary">${doc.id} <div class= "likeCount"><button class="btnLike" onclick="addLikes('${doc.id}', '${doc.data().like}')"><img src="../img/likeHeart.png"><label id="likes${doc.id}">${doc.data().like}</label></button></div> </h5>
+            <h5 class="card-header border-primary">${doc.id} <div class= "likeCount"><button class="btn btnLike" onclick="addLikes('${doc.id}', '${doc.data().like}')"><img src="../img/likeHeart.png"><label id="likes${doc.id}">${doc.data().like}</label></button></div> </h5>
           <div class="card-body">
           <p class="card-text">${doc.data().post}</p>
             <button class= "btn btn-danger" onclick ="deletePost('${doc.id}' )" >Eliminar</button>
@@ -166,12 +165,14 @@ function deletePost(id) {
     .doc(id)
     .delete()
     .then(function() {
-      // console.log('Document successfully deleted!');
+      console.log('Document successfully deleted!');
     })
     .catch(function(error) {
-      // console.error('Error removing document: ', error);
+      console.error('Error removing document: ', error);
+     
     });
 }
+console.log(deletePost);
 
 //editar documentos
 let editButton = document.getElementById('btnSave');
@@ -203,12 +204,15 @@ function editionPost(id, post) {
 
       .catch(function(error) {
         // The document probably doesn't exist.
-        // console.error('Error updating document: ', error);
+        console.error('Error updating document: ', error);
+        
       });
   };
 }
+console.log(editionPost);
 
 function addLikes(id, likes) {
+  
   likes++;
 
   likes = parseInt(likes);
@@ -219,11 +223,12 @@ function addLikes(id, likes) {
       like: likes,
     })
     .then(function() {
-      // console.log('Document successfully updated!');
+      console.log('Document successfully updated!');
     })
 
     .catch(function(error) {
     
-      // console.error('Error updating document: ', error);
+      console.error('Error updating document: ', error);
     });
 }
+console.log(addLikes);

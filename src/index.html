@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
   <meta charset="UTF-8">
@@ -19,6 +19,7 @@
   
 
     <section id="bienvenida">
+      <h3>Bienvenida</h3>
         <div class="body row w-100">
             <div class="col-md-6">
                 <img class="card-img-top mx-auto d-block" src="../img/logofin3.png" id="logo"
@@ -56,11 +57,10 @@
                   </div>
                 </div>
                 <form>
-                  <div class="form-group mt-4">
-                    <label for="slogan"></label>
-                    <input type="text" class="form-control" id="slogan"
-                      placeholder='"Siempre hay un destino para cada mujer, sola, en grupo, en familia."'>
-                  </div>
+                    <div class="form-group mt-4">
+                        <label for="slogan"></label>
+                            <p id="slogan">"Siempre hay un destino para cada mujer <br> sola, en grupo, en familia.</p>
+                        </div>
                 </form>
               </div>
             </div>
@@ -114,7 +114,7 @@
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header main-color" >
-              <h5 class="modal-title" id="exampleModalLabel">Iniciar Sesión</h5>
+              <h5 class="modal-title" id="exampleModalLabel2">Iniciar Sesión</h5>
               <button type="button"  class="close" data-dismiss="modal" aria-label="Close" >
                 <span aria-hidden="true" >&times;</span>
               </button>
@@ -142,7 +142,7 @@
     <div class="nav" id="navInicio">
         <nav class="navbar navbar-light" style="background-color: #eddcde;">
             <nav class="navbar navbar-expand-lg " >
-                  <img width="55rem" src="../img/logofin3.png">
+                  <img class="logo-barra" src="../img/logofin3.png" alt="">
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText"
                   aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
                   <span class="navbar-toggler-icon"></span>
@@ -169,15 +169,16 @@
     </div><!-- fin div inicio -->
     
     <div class="page active" id="wall" >
+      <h1>Bienvenidas Viajeras</h1>
       <div class="col-md-12 iconBar">
-          <h1 class= "travelIcons col-md-12"><i class="fas fa-plane-departure"></i><i class="fas fa-passport"></i><i class="fas fa-globe-americas"></i><i class="fas fa-map-marked-alt"></i></h1>
+        <p class= "travelIcons col-md-12"><i class="fas fa-plane-departure"></i><i class="fas fa-passport"></i><i class="fas fa-globe-americas"></i><i class="fas fa-map-marked-alt"></i></p>
       </div>
         
         <!-- <div id="myWall"> -->
       <div class=" justify-content-md-center">
         <div class="col-md-auto"> 
           <div class="col-md-auto centerPost">    
-          <textarea class="control centerPost borderPost"  id="post" placeholder="Compartenos alguna experiencia" rows="5"  maxlength="250"></textarea><br/>
+          <textarea class="col-md-auto control centerPost borderPost"  id="post" placeholder="Compartenos alguna experiencia" rows="5"  maxlength="250"></textarea><br/>
           <button class= "btn btn-info btncolor" id= "btnPost" >Compartir</button>
           <button class= "btn btn-info btncolor" id= "btnSave" >Guardar</button>
             <div class="select  dropdown-menu-right" >
@@ -187,7 +188,6 @@
               </select>
             </div>
             <div id= "valueBtns">
-              <label for=""></label>
               <button id="btnPublic" value="public" class= "btn  btncolor btnform" ><i class="fas fa-users"></i> </button>
               <button id="btnFriends" value="friends" class= "btn btncolor btnform"><i class="fas fa-user-lock"></i> </button>
             </div>
@@ -204,7 +204,8 @@
     <!-- fin div perfil -->
 
     <div class="page" id="tipsAhorro">
-        <h1 class= "travelIcons col-md-12"><i class="far fa-credit-card"></i><i class="fas fa-money-bill-wave"></i><i class="fas fa-search-dollar"></i><i class="fas fa-dollar-sign"></i></h1>
+        <h1 >Tips de ahorro</h1>
+          <div class= "travelIcons col-md-12"><i class="far fa-credit-card"></i><i class="fas fa-money-bill-wave"></i><i class="fas fa-search-dollar"></i><i class="fas fa-dollar-sign"></i></div>
         
         <div class="accordion" id="accordionExample">
           <div class="card">
@@ -321,10 +322,7 @@
     </div><!-- fin div tips de ahorro -->
   </main>
   
-</body>
-
-
-<!-- <script src="https://www.gstatic.com/firebasejs/5.9.1/firebase.js"></script> -->
+  <!-- <script src="https://www.gstatic.com/firebasejs/5.9.1/firebase.js"></script> -->
 <script src="https://www.gstatic.com/firebasejs/5.8.4/firebase-app.js"></script>
 <script src="https://www.gstatic.com/firebasejs/5.8.4/firebase-auth.js"></script>
 <script src="https://www.gstatic.com/firebasejs/5.8.4/firebase-database.js"></script>
@@ -339,13 +337,6 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
   integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
  
-    
-    <!-- async="async" -->
-    <!-- <script src="main.js"></script> -->
-
-
-
-
 </body>
 
 </html>
