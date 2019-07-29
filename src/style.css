@@ -1,11 +1,40 @@
-/* @media only screen and (min-width : 320px) and (max-width : 500px) {
- 
-  .card-img-top{
-    align-content: center;
-    
-    
+@media only screen and (max-width : 480px) {
+  .card-body{
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    margin-top: 30%;
+    position: fixed;
   }
-} */
+  div.col-md-6 {
+    text-align: center;
+  }
+  .card-img{
+    width: 5rem !important;
+    margin-bottom: 10px;
+  }
+  .w100{
+    position: fixed;
+    margin: auto;
+  }
+  .carousel-img{
+    width: 100%;
+    padding-left: 30px;
+    margin: auto;
+    position: relative;
+    height: 100px;
+  }
+  .slogan{
+    text-align: center!important;
+    font-size: .8rem;
+    font-style: oblique;
+  }
+  p.card-text{
+    text-align: justify!important;
+    width: 100%;
+    padding-top: 20%;
+    font-size: .8rem;
+  }
+}
 
 
 
@@ -15,21 +44,23 @@ body{
   /* overflow-x: hidden;
   overflow-y: auto; */
 }
-#logo{
-
+.card-img{
+  width: 18rem;
   align-content: center;
 }
-#slogan{
+/* .slogan{
 width: 32.7rem;
 margin-left: auto;
 margin-right: auto;
-}
+} */
 
 .logo-barra{
 width: 10%;
 }
 
-
+/* .card-img{
+  width: 18rem;
+} */
 /*centrar input text del slogan*/
 .close{
   margin-left: auto;
@@ -217,3 +248,4 @@ textarea{
   margin-bottom: 1rem;
   
 }
+
