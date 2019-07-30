@@ -32,6 +32,7 @@ signupForm.addEventListener('submit', e => {
 
   db.collection("users").doc().set({
     // userid: id,
+    
     nombre: name,
     apellido: apellido
   })

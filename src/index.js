@@ -135,14 +135,14 @@ let tableData = document.getElementById('table-data');
 
 function readPost() {
   editButton.style.display = 'none';
-  db.collection(collectionName).onSnapshot(querySnapshot => {
+   db.collection(collectionName).onSnapshot(querySnapshot => {
     tableData.innerHTML = '';
     querySnapshot.forEach(doc => {
       // console.log(`${doc.id} => ${doc.data().post} primero`);
       // console.log(`${doc.id} => ${doc.data().nombre}`);
       tableData.innerHTML += `
         <div class="card mb-3 border-secondary mb-3">
-            <h5 class="card-header border-primary">${doc.id} <div class= "likeCount"><button class="btn btnLike" onclick="addLikes('${doc.id}', '${doc.data().like}')"><img src="../img/likeHeart.png"><label id="likes${doc.id}">${doc.data().like}</label></button></div> </h5>
+            <h5 class="card-header border-primary"> <div class= "likeCount"><button class="btn btnLike" onclick="addLikes('${doc.id}', '${doc.data().like}')"><img src="../img/likeHeart.png"><label id="likes${doc.id}">${doc.data().like}</label></button></div></h5>
           <div class="card-body">
           <p class="card-text">${doc.data().post}</p>
             <button class= "btn btn-danger" onclick ="deletePost('${doc.id}' )" >Eliminar</button>
@@ -194,6 +194,8 @@ function editionPost(id, post) {
     return washingtonRef
       .update({
         post: newPost,
+        
+        
       })
       .then(function() {
         // console.log('Document successfully updated!');
